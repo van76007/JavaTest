@@ -29,7 +29,7 @@ java -cp VerifyTriangle.jar verifytriangle.VerifyTriangle
 ### Tests
 
 ```
-mvn clean installs
+java -cp VerifyTriangle.jar test.TestRunner
 ```
 
 ### License
