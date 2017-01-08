@@ -10,6 +10,6 @@ public class EquilateralTriangleRule implements ValidationRule {
 
     @Override
     public boolean validate(Triangle t) {
-        return (t.hasAllSidesEqual());
+        return t.hasAllSidesEqual();
     } 
 }

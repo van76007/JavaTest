@@ -12,11 +12,11 @@ import static java.lang.System.out;
  */
 public class TestRunner {
     public static void main(String[] args) {
+        int numberOfTestCases = 0;
+        int numberOfFailedTestCases = 0;
         try {
             Class<?> cls = Class.forName("test.AppTest");
-            Object o = cls.newInstance();
-            int numberOfTestCases = 0;
-            int numberOfFailedTestCases = 0;
+            Object o = cls.newInstance();    
             
             Method[] allMethods = cls.getDeclaredMethods();
 	    for (Method m : allMethods) {
@@ -39,14 +39,14 @@ public class TestRunner {
                     out.println(ex.getLocalizedMessage());
                 }
             }
-            
-            if(numberOfFailedTestCases == 0){
-                out.format("All %d test cases passed\n", numberOfTestCases);
-            } else {
-                out.format("%d test cases run. %d failed\n", numberOfTestCases, numberOfFailedTestCases);
-            }
         } catch (ClassNotFoundException | ClassCastException | InstantiationException | IllegalAccessException ex) {
 	    out.println(ex.getLocalizedMessage());
 	}
+        
+        if(numberOfFailedTestCases == 0){
+            out.format("All %d test cases passed\n", numberOfTestCases);
+        } else {
+            out.format("%d test cases run. %d failed\n", numberOfTestCases, numberOfFailedTestCases);
+        }
     }
 }

@@ -10,6 +10,6 @@ public class IsoscelesTriangleRule implements ValidationRule {
 
     @Override
     public boolean validate(Triangle t) {
-        return (t.hasAtLeastTwoEqualSides());
+        return t.hasAtLeastTwoEqualSides();
     } 
 }
