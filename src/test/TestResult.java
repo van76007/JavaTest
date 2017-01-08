@@ -1,21 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package test;
 
 import verifytriangle.model.Shape;
 import verifytriangle.model.Triangle;
 
 /**
- *
+ * Model of result of a test case
  * @author vanvu
  */
 public class TestResult {
+    // Test parameter
     private final Triangle t;
+    // Expected result of a test case
     private final Shape expectedResult;
+    // Actual result of a test case
     private final Shape actualResult;
+    // Status of the test case: OK/KO
     private boolean isPassed;
     
     public TestResult(Triangle t, Shape expectedResult, Shape actualResult) {
@@ -31,6 +30,13 @@ public class TestResult {
         return this.isPassed;
     }
     
+    /**
+     * Method to build informative message about an execution of the test case
+     * @return:
+     *          0. Test inputs
+     *          1. Status: Passed/Not passed
+     *          2. If Not passed: What is the actual result vs expected result 
+     */
     public String toPrintableFormat() {
         StringBuilder sb = new StringBuilder(t.toString());
         if(expectedResult == actualResult) {

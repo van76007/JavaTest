@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package verifytriangle.model;
 
 import verifytriangle.rules.*;
 
 /**
- *
+ * Mapping between a particular shape of the triangle to its validation rule
  * @author vanvu
  */
 public enum Shape {
@@ -60,7 +55,15 @@ public enum Shape {
             return "a scalene triangle";
         }
     };
-
+    
+    /**
+     * Method to get the rule to validate a triangle
+     * @return a validation rule
+     */
     public abstract ValidationRule getRule();
+    /**
+     * Method to build the informative message about the shape of the triangle
+     * @return 
+     */
     public abstract String toPrintableFormat();
 }
