@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package test;
 
 import java.lang.reflect.InvocationTargetException;
@@ -5,9 +10,7 @@ import java.lang.reflect.Method;
 import static java.lang.System.out;
 
 /**
- * An application to simulate execution of unit testing
- * To run:
- *          java -cp VerifyTriangle.jar test.TestRunner
+ *
  * @author vanvu
  */
 public class TestRunner {
@@ -17,13 +20,11 @@ public class TestRunner {
             Object o = cls.newInstance();
             int numberOfTestCases = 0;
             int numberOfFailedTestCases = 0;
-            
             Method[] allMethods = cls.getDeclaredMethods();
 	    for (Method m : allMethods) {
                 String methodName = m.getName();
 		if (!methodName.startsWith("test")) {
-		    // Skip test setup/tear down/helper methods, only run test cacses
-                    continue;
+		    continue;
 		}
                 
                 try {
@@ -45,7 +46,7 @@ public class TestRunner {
             } else {
                 out.format("%d test cases run. %d failed\n", numberOfTestCases, numberOfFailedTestCases);
             }
-        } catch (ClassNotFoundException | ClassCastException | InstantiationException | IllegalAccessException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
 	    out.println(ex.getLocalizedMessage());
 	}
     }
