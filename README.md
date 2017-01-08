@@ -22,6 +22,7 @@ make
 How to run the application
 
 ```
+cd dist
 java -cp VerifyTriangle.jar verifytriangle.VerifyTriangle
 ```
 
@@ -53,7 +54,17 @@ All test cases are included in the AppTest class. A test runner will execute all
 
 ### Tests
 
+There are 4 groups of test cases:
+
+1. Invalid triangle:
+2. Equilateral triangle.
+3. Isosceles triangle.
+4. Scalene triangle.
+
+After compiling the JAR file:
+
 ```
+cd dist
 java -cp VerifyTriangle.jar test.TestRunner
 ```
 
