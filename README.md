@@ -44,6 +44,7 @@ The algorithm to verify a triangle is straightforward. Assumed that the sides of
 
 To avoid multiple conditional branches, I decide to map between a particular shape of the triangle to a validation rule. Then we check the rule one by one until one is satisfied.
 Note that the checking order is important due to the prior condition to applied a rule, e.g. to be a triangle, it must NOT be an invalid triangle first. 
+I could have used the Factory design pattern to yield a rule given the desired shape to check. But I decide to use enum to make the code less complex.
 
 To avoid the dependency on a unit testing framework like JUnit, which only makes the JAR file become bigger if we statically compile it, I implemented a light-weight unit testing framework in Java.
 All test cases are included in the AppTest class. A test runner will execute all the test cases by using Java reflection to invoke AppTest class methods. We simulate the cycle of unit test:
