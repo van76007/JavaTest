@@ -10,7 +10,7 @@ public interface ValidationRule {
     /**
      * Method to validate the shape of a triangle
      * @param t: a triangle
-     * @return true of the triangle satisfies the rule
+     * @return true if the triangle satisfies the rule to have a particular shape
      */
     boolean validate(Triangle t);
 }

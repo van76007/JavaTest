@@ -26,6 +26,7 @@ public class TestRunner {
                     continue;
 		}
                 
+                out.println("\nRunning test case...");
                 try {
 		    m.setAccessible(true);
 		    Object testResult = m.invoke(o, (Object[])null);

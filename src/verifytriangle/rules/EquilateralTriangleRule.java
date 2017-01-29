@@ -7,9 +7,14 @@ import verifytriangle.model.Triangle;
  * @author vanvu
  */
 public class EquilateralTriangleRule implements ValidationRule {
-
+    
+    /**
+     * 
+     * @param t a triangle
+     * @return true if the triangle is equilateral triangle
+     */
     @Override
     public boolean validate(Triangle t) {
-        return t.hasAllSidesEqual();
+        return (t.getA() == t.getB() && t.getB() == t.getC());
     } 
 }

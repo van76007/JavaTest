@@ -1,5 +1,7 @@
 package verifytriangle.model;
 
+import java.math.BigDecimal;
+
 
 /**
  * Model of a triangle
@@ -9,6 +11,8 @@ public class Triangle {
     private float a;
     private float b;
     private float c;
+    // Boolean value which is true when 3 sides satisfy the triangle inequality
+    public boolean valid;
     
     public Triangle(float a, float b, float c) {
         this.a = a;
@@ -16,46 +20,24 @@ public class Triangle {
         this.c = c;
     }
     
-    /**
-     * Calculate min side of the triangle
-     * @return min dimension of the triangle
-     */
-    public float getMinSide() {
-        float min = a < b ? a : b;
-        return (min < c ? min : c);
+    public float getA() {
+        return a;
     }
     
-    /**
-     * Calculate max side of the triangle
-     * @return max dimension of the triangle
-     */
-    public float getMaxSide() {
-        float max = a > b ? a : b;
-        return (max > c ? max : c);
+    public float getB() {
+        return b;
     }
     
-    /**
-     * Calculate sum of all sides of the triangle
-     * @return sum of all sides of the triangle
-     */
-    public float getSumOfAllSides() {
-        return (a + b + c);
+    public float getC() {
+        return c;
     }
     
-    /**
-     * Check if the triangle has at least 2 equal sides
-     * @return true if there are 2 equal sides
-     */
-    public boolean hasAtLeastTwoEqualSides() {
-        return (a==b || b==c || c==a);
+    public void setValid(boolean v) {
+        this.valid = v;
     }
     
-    /**
-     * Check if the triangle has all equal sides
-     * @return true if all sides are equal
-     */
-    public boolean hasAllSidesEqual() {
-        return (a==b && b==c);
+    public boolean isValid() {
+        return this.valid;
     }
     
     @Override

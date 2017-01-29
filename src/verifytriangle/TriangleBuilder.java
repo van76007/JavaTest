@@ -2,6 +2,7 @@ package verifytriangle;
 
 import verifytriangle.model.Triangle;
 import static java.lang.System.out;
+import java.math.BigDecimal;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

@@ -7,9 +7,17 @@ import verifytriangle.model.Triangle;
  * @author vanvu
  */
 public class ScaleneTriangleRule implements ValidationRule {
-
+    
+    /**
+     * 
+     * @param t a triangle
+     * @return true if the triangle is a scalene triangle
+     */
     @Override
     public boolean validate(Triangle t) {
-        return (t.getMinSide() > 0 && 2*t.getMaxSide() < t.getSumOfAllSides() && !t.hasAtLeastTwoEqualSides());
+        if (!t.isValid()) {
+            return false;
+        }
+        return (t.getA() != t.getB() && t.getB() != t.getC() && t.getC() != t.getA());
     }
 }
